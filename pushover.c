@@ -25,7 +25,8 @@ board* createBoard(int size)
         printf("No memory to allocate\n");
         exit(0);
     }
-    b->array = malloc(size * sizeof(int));
+    b->size = size;
+    b->array = (int*) malloc(size * size * sizeof(int));
     if(b->array == NULL)
     {
         printf("No memory to allocate\n");
@@ -46,6 +47,26 @@ void destroyBoard(board* b)
     free(b);
 }
 
+void fillBoard(board* b)
+{
+    for(int i=0; i<b->size*b->size; i++)
+    {
+        b->array[i] = i;
+    }
+}
+
+void showBoard(board* b)
+{
+    for(int i=0; i<b->size*b->size; i++)
+    {
+        printf("%d ",b->array[i]);
+        if((i+1)%b->size==0)
+        {
+            printf("\n");
+        }
+    }    
+}
+
 // int getCase(board* b, int i, int j) {
 
 // }
@@ -53,9 +74,9 @@ void destroyBoard(board* b)
 int main()
 {
     board* b = createBoard(3);
+    fillBoard(b);
+    showBoard(b);
     destroyBoard(b);
-
-
 
     return EXIT_SUCCESS;
 }
