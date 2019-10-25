@@ -37,7 +37,7 @@ board* createBoard(int size)
 
 /*!
  * Function deallocating a board's memory whose address is as parameter.
- * \param b : address of board
+ * \param b : board
  */ 
 void destroyBoard(board* b)
 {
@@ -69,12 +69,26 @@ void showBoard(board* b)
 
 /*!
  * Function returning the value at position i j
+ * \param b : board
  * \param i : row
  * \param j : column
  */
-int getPiece(board* b, int i, int j) {
+int getPiece(board* b, int i, int j)
+{
     assert(i>=0 && i<b->size && j>=0 && j<b->size);
     return b->array[i*b->size+j];
+}
+
+/*!
+ * Function modifying the value of piece at position i j
+ * \param b : board
+ * \param i : row
+ * \param j : column
+ * \param val : new value replacing the old one
+ */ 
+void setPiece(board* b, int i, int j, int val)
+{
+
 }
 
 int main()
