@@ -96,15 +96,21 @@ void showV1(board* b)
     }    
 }
 
+void showV2(board* b)
+{
+    // TODO
+}
+
+void showV3(board* b)
+{
+    // TODO
+}
+
 int main()
 {
     board* b = createBoard(3);
     fillBoard(b);
-    showBoard(b);
-    // printf("%d\n",getPiece(b,0,2));
-    setPiece(b, 2, 0, -2);
-    printf("\n");
-    showBoard(b);
+    showV1(b);
     destroyBoard(b);
 
     return EXIT_SUCCESS;
