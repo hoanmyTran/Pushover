@@ -59,7 +59,7 @@ void showBoard(board* b)
 {
     for(int i=0; i<b->size*b->size; i++)
     {
-        printf("%d ",b->array[i]);
+        printf("%d\t",b->array[i]);
         if((i+1)%b->size==0)
         {
             printf("\n");
@@ -67,15 +67,22 @@ void showBoard(board* b)
     }    
 }
 
-// int getCase(board* b, int i, int j) {
-
-// }
+/*!
+ * Function returning the value at position i j
+ * \param i : row
+ * \param j : column
+ */
+int getPiece(board* b, int i, int j) {
+    assert(i>=0 && i<b->size && j>=0 && j<b->size);
+    return b->array[i*b->size+j];
+}
 
 int main()
 {
     board* b = createBoard(3);
     fillBoard(b);
     showBoard(b);
+    //printf("%d\n",getPiece(b,0,2));
     destroyBoard(b);
 
     return EXIT_SUCCESS;
