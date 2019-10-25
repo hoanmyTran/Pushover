@@ -81,6 +81,19 @@ void setPiece(board* b, int i, int j, int val)
 }
 
 /*!
+ * Function returning 1 if the index is valid
+ * \param index : index of the board between [0,n-1]
+ */ 
+int validIndex(board* b, int index)
+{
+    if(index>=0 && index<=b->size-1)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+/*!
  * Function showing board
  * \param b : board
  */ 
