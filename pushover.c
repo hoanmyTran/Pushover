@@ -88,7 +88,8 @@ int getPiece(board* b, int i, int j)
  */ 
 void setPiece(board* b, int i, int j, int val)
 {
-
+    assert(i>=0 && i<b->size && j>=0 && j<b->size && val>=-1 && val<=1);
+    b->array[getPiece(b, i, j)] = val;
 }
 
 int main()
@@ -96,7 +97,10 @@ int main()
     board* b = createBoard(3);
     fillBoard(b);
     showBoard(b);
-    //printf("%d\n",getPiece(b,0,2));
+    // printf("%d\n",getPiece(b,0,2));
+    setPiece(b, 2, 0, -2);
+    printf("\n");
+    showBoard(b);
     destroyBoard(b);
 
     return EXIT_SUCCESS;
