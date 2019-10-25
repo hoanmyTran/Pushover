@@ -55,18 +55,6 @@ void fillBoard(board* b)
     }
 }
 
-void showBoard(board* b)
-{
-    for(int i=0; i<b->size*b->size; i++)
-    {
-        printf("%d\t",b->array[i]);
-        if((i+1)%b->size==0)
-        {
-            printf("\n");
-        }
-    }    
-}
-
 /*!
  * Function returning the value at position i j
  * \param b : board
@@ -90,6 +78,22 @@ void setPiece(board* b, int i, int j, int val)
 {
     assert(i>=0 && i<b->size && j>=0 && j<b->size && val>=-1 && val<=1);
     b->array[getPiece(b, i, j)] = val;
+}
+
+/*!
+ * Function showing board
+ * \param b : board
+ */ 
+void show(board* b)
+{
+    for(int i=0; i<b->size*b->size; i++)
+    {
+        printf("%d\t",b->array[i]);
+        if((i+1)%b->size==0)
+        {
+            printf("\n");
+        }
+    }    
 }
 
 int main()
