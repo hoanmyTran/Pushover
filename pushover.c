@@ -84,7 +84,7 @@ void setPiece(board* b, int i, int j, int val)
  * Function showing board
  * \param b : board
  */ 
-void show(board* b)
+void showV1(board* b)
 {
     for(int i=0; i<b->size*b->size; i++)
     {
