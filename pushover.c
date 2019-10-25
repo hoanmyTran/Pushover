@@ -94,6 +94,20 @@ int validIndex(board* b, int index)
 }
 
 /*!
+ * Function returning 1 if the piece existing on the board
+ * \param rowIndex : index of row
+ * \param columnIndex : index of column
+ */ 
+int validPiece(board* b, int rowIndex, int columnIndex)
+{
+    if(validIndex(b, rowIndex), validIndex(b, columnIndex))
+    {
+        return 1;
+    }
+    return 0;
+}
+
+/*!
  * Function showing board
  * \param b : board
  */ 
