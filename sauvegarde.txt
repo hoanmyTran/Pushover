@@ -1,0 +1,1 @@
+La taille : 3 . Les joueurs actuels : 3 et 3 . Le pion courant : -1 . 0 1342177280 0 1342177280 1892220943 32767 -2087859895 32767 0 
